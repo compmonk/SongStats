@@ -10,8 +10,29 @@ engine = create_engine(f"postgresql://{db_user}:{db_password}@{db_host}:{db_port
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", pages={
+        "summary": "active",
+        "comparison": "",
+        "about": ""
+    })
 
+
+@app.route("/comparison/")
+def comparison():
+    return render_template("comparison.html", pages={
+        "summary": "",
+        "comparison": "active",
+        "about": ""
+    })
+
+
+@app.route("/about/")
+def about():
+    return render_template("about.html", pages={
+        "summary": "",
+        "comparison": "",
+        "about": "active"
+    })
 
 @app.route("/summary")
 def summary():
