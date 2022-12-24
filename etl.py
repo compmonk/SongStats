@@ -15,7 +15,7 @@ def extract():
     else:
         with ZipFile(os.path.join(data_path, "tracks.csv.zip")) as artists_zip:
             artists_zip.extractall(path=data_path)
-        print(f"Extraction from {data_path} complete ✅ ")
+        print(f"Extraction from {data_path} complete ✅")
 
 
 def transform():
@@ -67,7 +67,7 @@ def transform():
                                        aggfunc=np.size).fillna(0).add_prefix("time_signature_")
     summary_df = summary_df.merge(time_signature_df, left_index=True, right_index=True)
 
-    print(f"Transformation complete ✅ ")
+    print(f"Transformation complete ✅")
 
     return summary_df
 
@@ -76,4 +76,4 @@ def load(df, table_name):
     engine = create_engine(f"postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}")
     connection = engine.connect()
     df.to_sql(table_name, connection, if_exists="replace")
-    print(f"Loading into {db_name}.{table_name} complete ✅ ")
+    print(f"Loading into {db_name}.{table_name} complete ✅")

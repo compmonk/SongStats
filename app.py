@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 from sqlalchemy import create_engine, inspect
 
 from config import db_user, db_password, db_host, db_port, db_name
@@ -6,6 +6,12 @@ from etl import extract, transform, load
 
 app = Flask(__name__)
 engine = create_engine(f"postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}")
+
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
 
 @app.route("/summary")
 def summary():
@@ -15,7 +21,7 @@ def summary():
 
 if __name__ == '__main__':
     if "summary" in inspect(engine).get_table_names():
-        print("'summary' table found, skipping ETL ⏩ ")
+        print("'summary' table found, skipping ETL ⏩")
     else:
         extract()
         df = transform()
