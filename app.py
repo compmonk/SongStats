@@ -1,5 +1,5 @@
 from flask import Flask, jsonify
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, inspect
 
 from config import db_user, db_password, db_host, db_port, db_name
 from etl import extract, transform, load
@@ -14,8 +14,11 @@ def summary():
 
 
 if __name__ == '__main__':
-    extract()
-    df = transform()
-    load(df, "summary")
+    if "summary" in inspect(engine).get_table_names():
+        print("'summary' table found, skipping ETL ⏩ ")
+    else:
+        extract()
+        df = transform()
+        load(df, "summary")
     print("Starting web server 🌎")
     app.run(debug=True)
