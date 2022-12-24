@@ -3,9 +3,31 @@
 {% block title %}Summary{% endblock %}
 
 {% block header %}
-<h1>Summary</h1>
+<h1>Summary of songs from 1922 to 2021</h1>
 {% endblock %}
 
 {% block content %}
-<p>Some Content Here</p>
+<div class="row">
+    <div class="col-12">
+        <div class="btn-group select">
+            <select class="form-select form-select-sm" id="aggregate-function">
+                <option selected value="mean">Mean</option>
+                <option value="min">Min</option>
+                <option value="max">Max</option>
+                <option value="std">Std</option>
+                <option value="var">Var</option>
+            </select>
+        </div>
+
+        <div id="summary-line-plot"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12" id="loudness-tempo-line-plot"></div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-sm-12" id="explicit-line-plot"></div>
+    <div class="col-md-6 col-sm-12" id="total-line-plot"></div>
+</div>
+<script src="{{ url_for('static', filename='js/summary.js') }}"></script>
 {% endblock %}
