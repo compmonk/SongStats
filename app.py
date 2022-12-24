@@ -34,7 +34,8 @@ def about():
         "about": "active"
     })
 
-@app.route("/summary")
+
+@app.route("/api/summary.json")
 def summary():
     results = engine.execute("SELECT * FROM summary")
     return jsonify([dict(_) for _ in results])
