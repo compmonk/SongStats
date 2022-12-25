@@ -1,5 +1,3 @@
-const url = "/api/summary.json"
-
 d3.select("#aggregate-function").on("change", handleChange)
 
 const aggregateFunctionLabel = {
