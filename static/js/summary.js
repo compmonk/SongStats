@@ -24,9 +24,6 @@ function plotCharts(aggregateFunction) {
             "valence",
         ]
 
-        const summaryLinePlotLayout = {
-            title: `${aggregateFunctionLabel[aggregateFunction]} of Acousticness, Danceability, Energy, Instrumentalness, Liveness, Speechiness, Valence over the years`
-        }
 
         const traces = metrics.map(metric => ({
             x: data.map(_ => _["year"]),
@@ -34,6 +31,14 @@ function plotCharts(aggregateFunction) {
             type: "scatter",
             name: toTitleCase(metric)
         }))
+
+        const summaryLinePlotLayout = {
+            title: `${aggregateFunctionLabel[aggregateFunction]} of Acousticness, Danceability, Energy, Instrumentalness, Liveness, Speechiness, Valence over the years`,
+            xaxis: {
+                title: "Year"
+            }
+
+        }
 
         Plotly.newPlot("summary-line-plot", traces, summaryLinePlotLayout, {responsive: true})
 
@@ -50,7 +55,10 @@ function plotCharts(aggregateFunction) {
         }]
 
         const loudnessTempoLinePlotLayout = {
-            title: `${aggregateFunctionLabel[aggregateFunction]} of Loudness and Tempo over the years`
+            title: `${aggregateFunctionLabel[aggregateFunction]} of Loudness and Tempo over the years`,
+            xaxis: {
+                title: "Year"
+            }
         }
 
         Plotly.newPlot("loudness-tempo-line-plot", loudnessTempoLinePlotTrace, loudnessTempoLinePlotLayout, {responsive: true})
@@ -63,7 +71,13 @@ function plotCharts(aggregateFunction) {
         }]
 
         const explicitLinePlotLayout = {
-            title: "Explicity over the years"
+            title: "Explicity over the years",
+            xaxis: {
+                title: "Year"
+            },
+            yaxis: {
+                title: "% of Explicit Songs each Year"
+            }
         }
 
         Plotly.newPlot("explicit-line-plot", explicitLinePlotTrace, explicitLinePlotLayout, {responsive: true})
@@ -76,7 +90,13 @@ function plotCharts(aggregateFunction) {
         }]
 
         const totalLinePlotLayout = {
-            title: "Total songs over the years"
+            title: "Total songs over the years",
+            xaxis: {
+                title: "Year"
+            },
+            yaxis: {
+                title: "Number of Songs each Year"
+            }
         }
 
         Plotly.newPlot("total-line-plot", totalLinePlotTrace, totalLinePlotLayout, {responsive: true})
