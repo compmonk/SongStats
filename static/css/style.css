@@ -18,6 +18,10 @@
     color: #FFFFFF;
 }
 
+#github-link > button {
+    color: var(--font-color);
+}
+
 .hide {
     display: none;
 }
