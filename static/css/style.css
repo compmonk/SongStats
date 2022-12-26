@@ -6,3 +6,11 @@
 .select {
     padding: 2rem;
 }
+
+.select2 {
+    width: 100% !important;
+}
+
+.select2-selection--multiple {
+    border-color: #dee2e6 !important;
+}
