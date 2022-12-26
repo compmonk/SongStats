@@ -27,7 +27,21 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
-    <script>const url = "{{url_for('summary')}}"</script>
+    <script>
+        const url = "{{url_for('summary')}}";
+        const aggregateFunctionLabel = {
+            mean: "Average",
+            min: "Minimum",
+            max: "Maximum",
+            var: "Variance",
+            std: "Standard Deviation"
+        };
+
+        function toTitleCase(string) {
+            return `${string[0].toUpperCase()}${string.slice(1).toLowerCase()}`
+        };
+
+    </script>
 </head>
 <body>
 <header>
