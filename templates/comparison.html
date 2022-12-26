@@ -3,10 +3,27 @@
 {% block title %}Comparison{% endblock %}
 
 {% block header %}
-<h1>Comparison</h1>
+<h1>Comparison of Song Stats between different years</h1>
 {% endblock %}
 
 {% block content %}
-<p>Some Comparison Here</p>
+<div class="row">
+    <div class="col-12">
+        <div class="select">
+            <select class="form-select form-select-sm" id="select-years" multiple="multiple"></select>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <!--    <div class="col-12" id="yearly-radial-plot"></div>-->
+</div>
+<div class="row">
+    <div class="col-md-6 col-sm-12" id="yearly-radial-plot"></div>
+    <div class="col-md-6 col-sm-12" id="yearly-total-plot"></div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-sm-12" id="key-plot"></div>
+    <div class="col-md-6 col-sm-12" id="time-signature-plot"></div>
+</div>
 <script src="{{ url_for('static', filename='js/comparison.js') }}"></script>
 {% endblock %}
