@@ -8,22 +8,34 @@
 
 {% block content %}
 <div class="row">
-    <div class="col-12">
+    <div class="col-md-9 col-sm-12">
         <div class="select">
             <select class="form-select form-select-sm" id="select-years" multiple="multiple"></select>
         </div>
     </div>
-</div>
-<div class="row">
-    <!--    <div class="col-12" id="yearly-radial-plot"></div>-->
+    <div class="col-md-3 col-sm-12">
+        <div class="btn-group select">
+            <select class="form-select" id="aggregate-function">
+                <option selected value="mean">Average</option>
+                <option value="min">Minimum</option>
+                <option value="max">Maximum</option>
+                <option value="std">Standard Deviation</option>
+                <option value="var">Variance</option>
+            </select>
+        </div>
+    </div>
 </div>
 <div class="row">
     <div class="col-md-6 col-sm-12" id="yearly-radial-plot"></div>
-    <div class="col-md-6 col-sm-12" id="yearly-total-plot"></div>
+    <div class="col-md-6 col-sm-12" id="yearly-loudness-tempo-plot"></div>
 </div>
 <div class="row">
     <div class="col-md-6 col-sm-12" id="key-plot"></div>
     <div class="col-md-6 col-sm-12" id="time-signature-plot"></div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-sm-12" id="yearly-explicit-plot"></div>
+    <div class="col-md-6 col-sm-12" id="yearly-total-plot"></div>
 </div>
 <script src="{{ url_for('static', filename='js/comparison.js') }}"></script>
 {% endblock %}
