@@ -19,15 +19,15 @@
             </select>
         </div>
 
-        <div id="summary-line-plot"></div>
+        <div class="plot" id="summary-line-plot"></div>
     </div>
 </div>
 <div class="row">
-    <div class="col-12" id="loudness-tempo-line-plot"></div>
+    <div class="col-12 plot" id="loudness-tempo-line-plot"></div>
 </div>
 <div class="row">
-    <div class="col-md-6 col-sm-12" id="explicit-line-plot"></div>
-    <div class="col-md-6 col-sm-12" id="total-line-plot"></div>
+    <div class="col-md-6 col-sm-12 plot" id="explicit-line-plot"></div>
+    <div class="col-md-6 col-sm-12 plot" id="total-line-plot"></div>
 </div>
 <script src="{{ url_for('static', filename='js/summary.js') }}"></script>
 {% endblock %}

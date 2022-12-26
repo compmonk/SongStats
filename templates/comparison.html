@@ -10,7 +10,7 @@
 <div class="row">
     <div class="col-md-9 col-sm-12">
         <div class="select">
-            <select class="form-select form-select-sm" id="select-years" multiple="multiple"></select>
+            <select class="form-select" id="select-years" multiple="multiple"></select>
         </div>
     </div>
     <div class="col-md-3 col-sm-12">
@@ -26,16 +26,16 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-6 col-sm-12" id="yearly-radial-plot"></div>
-    <div class="col-md-6 col-sm-12" id="yearly-loudness-tempo-plot"></div>
+    <div class="col-md-6 col-sm-12 plot" id="yearly-radial-plot"></div>
+    <div class="col-md-6 col-sm-12 plot" id="yearly-loudness-tempo-plot"></div>
 </div>
 <div class="row">
-    <div class="col-md-6 col-sm-12" id="key-plot"></div>
-    <div class="col-md-6 col-sm-12" id="time-signature-plot"></div>
+    <div class="col-md-6 col-sm-12 plot" id="key-plot"></div>
+    <div class="col-md-6 col-sm-12 plot" id="time-signature-plot"></div>
 </div>
 <div class="row">
-    <div class="col-md-6 col-sm-12" id="yearly-explicit-plot"></div>
-    <div class="col-md-6 col-sm-12" id="yearly-total-plot"></div>
+    <div class="col-md-6 col-sm-12 plot" id="yearly-explicit-plot"></div>
+    <div class="col-md-6 col-sm-12 plot" id="yearly-total-plot"></div>
 </div>
 <script src="{{ url_for('static', filename='js/comparison.js') }}"></script>
 {% endblock %}
