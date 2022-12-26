@@ -27,7 +27,21 @@
 
     <link rel="stylesheet" href="/SongStats/static/css/style.css">
 
-    <script>const url = "/SongStats/api/summary.json"</script>
+    <script>
+        const url = "/SongStats/api/summary.json";
+        const aggregateFunctionLabel = {
+            mean: "Average",
+            min: "Minimum",
+            max: "Maximum",
+            var: "Variance",
+            std: "Standard Deviation"
+        };
+
+        function toTitleCase(string) {
+            return `${string[0].toUpperCase()}${string.slice(1).toLowerCase()}`
+        };
+
+    </script>
 </head>
 <body>
 <header>
@@ -67,7 +81,7 @@
 <div class="row">
     <div class="col-12">
         <div class="btn-group select">
-            <select class="form-select form-select-sm" id="aggregate-function">
+            <select class="form-select" id="aggregate-function">
                 <option selected value="mean">Average</option>
                 <option value="min">Minimum</option>
                 <option value="max">Maximum</option>

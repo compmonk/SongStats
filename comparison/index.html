@@ -27,7 +27,21 @@
 
     <link rel="stylesheet" href="/SongStats/static/css/style.css">
 
-    <script>const url = "/SongStats/api/summary.json"</script>
+    <script>
+        const url = "/SongStats/api/summary.json";
+        const aggregateFunctionLabel = {
+            mean: "Average",
+            min: "Minimum",
+            max: "Maximum",
+            var: "Variance",
+            std: "Standard Deviation"
+        };
+
+        function toTitleCase(string) {
+            return `${string[0].toUpperCase()}${string.slice(1).toLowerCase()}`
+        };
+
+    </script>
 </head>
 <body>
 <header>
@@ -65,22 +79,34 @@
 <main class="container">
     
 <div class="row">
-    <div class="col-12">
+    <div class="col-md-9 col-sm-12">
         <div class="select">
             <select class="form-select form-select-sm" id="select-years" multiple="multiple"></select>
         </div>
     </div>
-</div>
-<div class="row">
-    <!--    <div class="col-12" id="yearly-radial-plot"></div>-->
+    <div class="col-md-3 col-sm-12">
+        <div class="btn-group select">
+            <select class="form-select" id="aggregate-function">
+                <option selected value="mean">Average</option>
+                <option value="min">Minimum</option>
+                <option value="max">Maximum</option>
+                <option value="std">Standard Deviation</option>
+                <option value="var">Variance</option>
+            </select>
+        </div>
+    </div>
 </div>
 <div class="row">
     <div class="col-md-6 col-sm-12" id="yearly-radial-plot"></div>
-    <div class="col-md-6 col-sm-12" id="yearly-total-plot"></div>
+    <div class="col-md-6 col-sm-12" id="yearly-loudness-tempo-plot"></div>
 </div>
 <div class="row">
     <div class="col-md-6 col-sm-12" id="key-plot"></div>
     <div class="col-md-6 col-sm-12" id="time-signature-plot"></div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-sm-12" id="yearly-explicit-plot"></div>
+    <div class="col-md-6 col-sm-12" id="yearly-total-plot"></div>
 </div>
 <script src="/SongStats/static/js/comparison.js"></script>
 
