@@ -115,7 +115,6 @@ function plotCharts(aggregateFunction) {
 
 function handleChange(event) {
     const aggregateFunction = event.target.value
-    console.log(aggregateFunction)
     plotCharts(aggregateFunction)
 }
 

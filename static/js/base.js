@@ -1,7 +1,6 @@
 const lightModeButton = d3.select("#light-mode")
 const darkModeButton = d3.select("#dark-mode")
 const root = document.querySelector(":root")
-console.log(root)
 const html = d3.select("html")
 
 const screenMode = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
