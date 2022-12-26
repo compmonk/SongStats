@@ -1,17 +1,5 @@
 d3.select("#aggregate-function").on("change", handleChange)
 
-const aggregateFunctionLabel = {
-    mean: "Average",
-    min: "Minimum",
-    max: "Maximum",
-    var: "Variance",
-    std: "Standard Deviation"
-}
-
-function toTitleCase(string) {
-    return `${string[0].toUpperCase()}${string.slice(1).toLowerCase()}`
-}
-
 function plotCharts(aggregateFunction) {
     d3.json(url).then(data => {
         const metrics = [
