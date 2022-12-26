@@ -1,3 +1,9 @@
+:root {
+    --border-color: #dee2e6;
+    --background-color: #FFFFFF;
+    --font-color: #000000;
+}
+
 .header > h1 {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -7,10 +13,62 @@
     padding: 2rem;
 }
 
+/* Light Mode Button */
+#light-mode {
+    color: #FFFFFF;
+}
+
+#github-link > button {
+    color: var(--font-color);
+}
+
+.hide {
+    display: none;
+}
+
+/* Make Dropdown Responsive */
 .select2 {
     width: 100% !important;
 }
 
+/* Change to Bootstrap Border Color */
 .select2-selection--multiple {
-    border-color: #dee2e6 !important;
+    border-color: var(--border-color) !important;
+}
+
+/* Search Results and Menu options */
+.select2-results {
+    background-color: var(--background-color);
+}
+
+/* Menu border colour */
+.select2-dropdown {
+    border-color: var(--border-color) !important;
+}
+
+/* Select 2 Box */
+.select2-selection--multiple {
+    background-color: var(--background-color) !important;
+}
+
+/* Search Field */
+.select2-search__field {
+    background-color: var(--background-color) !important;
+    color: var(--font-color) !important;
+}
+
+/* Selected pills */
+.select2-selection__choice {
+    background-color: var(--background-color) !important;
+    border-color: var(--border-color) !important;
+}
+
+/* Selected options in Menu */
+.select2-results__option--selected {
+    background-color: var(--border-color) !important;
+}
+
+/* Clear Button */
+.select2-selection__clear {
+    color: var(--font-color);
 }

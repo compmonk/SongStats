@@ -56,6 +56,11 @@ function plotCharts(years, aggregateFunction) {
                 range: [0, 1]
             }
         },
+        font: {
+            color: fontColor,
+        },
+        paper_bgcolor: backgroundColor,
+        plot_bgcolor: backgroundColor
     }
 
     Plotly.newPlot("yearly-radial-plot", yearlyRadialPlotTrace, yearlyRadialPlotLayout, {responsive: true})
@@ -86,6 +91,11 @@ function plotCharts(years, aggregateFunction) {
                 range: [0, 1]
             }
         },
+        font: {
+            color: fontColor,
+        },
+        paper_bgcolor: backgroundColor,
+        plot_bgcolor: backgroundColor
     }
 
     Plotly.newPlot("yearly-loudness-tempo-plot", yearlyLoudnessTempoPlotTrace, yearlyLoudnessTempoLayout, {responsive: true})
@@ -106,7 +116,12 @@ function plotCharts(years, aggregateFunction) {
         yaxis: {
             title: "Number of Songs each for each key"
         },
-        barmode: "stack"
+        barmode: "stack",
+        font: {
+            color: fontColor,
+        },
+        paper_bgcolor: backgroundColor,
+        plot_bgcolor: backgroundColor
     }
 
     Plotly.newPlot("key-plot", keyPlotTrace, keyPlotLayout, {responsive: true})
@@ -126,7 +141,12 @@ function plotCharts(years, aggregateFunction) {
         yaxis: {
             title: "Number of Songs for each time signature"
         },
-        barmode: "stack"
+        barmode: "stack",
+        font: {
+            color: fontColor,
+        },
+        paper_bgcolor: backgroundColor,
+        plot_bgcolor: backgroundColor
     }
 
     Plotly.newPlot("time-signature-plot", timeSignaturePlotTrace, timeSignaturePlotLayout, {responsive: true})
@@ -145,7 +165,12 @@ function plotCharts(years, aggregateFunction) {
         },
         yaxis: {
             title: "Number of Songs each Year"
-        }
+        },
+        font: {
+            color: fontColor,
+        },
+        paper_bgcolor: backgroundColor,
+        plot_bgcolor: backgroundColor
     }
 
     Plotly.newPlot("yearly-total-plot", yearlyTotalPlotTrace, yearlyTotalPlotLayout, {responsive: true})
@@ -164,7 +189,12 @@ function plotCharts(years, aggregateFunction) {
         },
         yaxis: {
             title: "% of Explicit Songs each Year"
-        }
+        },
+        font: {
+            color: fontColor,
+        },
+        paper_bgcolor: backgroundColor,
+        plot_bgcolor: backgroundColor
     }
 
     Plotly.newPlot("yearly-explicit-plot", yearlyExplicitLinePlotTrace, yearlyExplicitLinePlotLayout, {responsive: true})

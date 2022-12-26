@@ -24,8 +24,12 @@ function plotCharts(aggregateFunction) {
             title: `${aggregateFunctionLabel[aggregateFunction]} of Acousticness, Danceability, Energy, Instrumentalness, Liveness, Speechiness, Valence over the years`,
             xaxis: {
                 title: "Year"
-            }
-
+            },
+            font: {
+                color: fontColor,
+            },
+            paper_bgcolor: backgroundColor,
+            plot_bgcolor: backgroundColor
         }
 
         Plotly.newPlot("summary-line-plot", traces, summaryLinePlotLayout, {responsive: true})
@@ -46,7 +50,12 @@ function plotCharts(aggregateFunction) {
             title: `${aggregateFunctionLabel[aggregateFunction]} of Loudness and Tempo over the years`,
             xaxis: {
                 title: "Year"
-            }
+            },
+            font: {
+                color: fontColor,
+            },
+            paper_bgcolor: backgroundColor,
+            plot_bgcolor: backgroundColor
         }
 
         Plotly.newPlot("loudness-tempo-line-plot", loudnessTempoLinePlotTrace, loudnessTempoLinePlotLayout, {responsive: true})
@@ -65,7 +74,12 @@ function plotCharts(aggregateFunction) {
             },
             yaxis: {
                 title: "% of Explicit Songs each Year"
-            }
+            },
+            font: {
+                color: fontColor,
+            },
+            paper_bgcolor: backgroundColor,
+            plot_bgcolor: backgroundColor
         }
 
         Plotly.newPlot("explicit-line-plot", explicitLinePlotTrace, explicitLinePlotLayout, {responsive: true})
@@ -84,7 +98,12 @@ function plotCharts(aggregateFunction) {
             },
             yaxis: {
                 title: "Number of Songs each Year"
-            }
+            },
+            font: {
+                color: fontColor,
+            },
+            paper_bgcolor: backgroundColor,
+            plot_bgcolor: backgroundColor
         }
 
         Plotly.newPlot("total-line-plot", totalLinePlotTrace, totalLinePlotLayout, {responsive: true})
