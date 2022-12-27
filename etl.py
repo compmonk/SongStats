@@ -9,6 +9,7 @@ from config import db_user, db_password, db_host, db_port, db_name
 
 data_path = os.path.join("data")
 
+
 def extract():
     if os.path.exists(os.path.join(data_path, "tracks.csv")):
         print("Data present skipping extraction ⏩")
@@ -23,6 +24,7 @@ def transform():
     # Add the year column
     tracks_df.release_date = pd.to_datetime(tracks_df.release_date)
     tracks_df["year"] = tracks_df.release_date.dt.year
+    tracks_df["duration"] = tracks_df["duration_ms"] / 1000
     tracks_df.drop(index=tracks_df[tracks_df["year"] == 1900].index, inplace=True)
 
     # Generate the "mean", "min", "max", "std", "var" for all the values
@@ -36,6 +38,7 @@ def transform():
         'instrumentalness',
         'liveness',
         'valence',
+        'duration',
         'tempo'
     ]].groupby("year").agg(["mean", "min", "max", "std", "var"])
     summary_df.columns = [f"{column[0]}_{column[1]}" if type(column) is tuple else column for column in
