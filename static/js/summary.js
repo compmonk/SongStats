@@ -44,6 +44,11 @@ function plotCharts(aggregateFunction) {
             y: data.map(_ => _[`tempo_${aggregateFunction}`]),
             type: "scatter",
             name: "Tempo"
+        }, {
+            x: data.map(_ => _["year"]),
+            y: data.map(_ => _[`duration_${aggregateFunction}`]),
+            type: "scatter",
+            name: "Duration (s)"
         }]
 
         const loudnessTempoLinePlotLayout = {

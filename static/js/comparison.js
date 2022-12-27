@@ -75,6 +75,11 @@ function plotCharts(years, aggregateFunction) {
         y: selectedYears.map(_ => _[`tempo_${aggregateFunction}`]),
         type: "scatter",
         name: "Tempo"
+    }, {
+        x: selectedYears.map(_ => _["year"]),
+        y: selectedYears.map(_ => _[`duration_${aggregateFunction}`]),
+        type: "scatter",
+        name: "Duration (s)"
     }]
 
     const yearlyLoudnessTempoLayout = {
@@ -114,7 +119,7 @@ function plotCharts(years, aggregateFunction) {
             title: "Musical Keys"
         },
         yaxis: {
-            title: "Number of Songs each for each key"
+            title: "Number of Songs for each key"
         },
         barmode: "stack",
         font: {
@@ -139,7 +144,7 @@ function plotCharts(years, aggregateFunction) {
             title: "Time Signature"
         },
         yaxis: {
-            title: "Number of Songs for each time signature"
+            title: "Number of Songs for each Time Signature"
         },
         barmode: "stack",
         font: {
