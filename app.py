@@ -42,7 +42,8 @@ def summary():
 
 
 if __name__ == '__main__':
-    if "summary" in inspect(engine).get_table_names():
+    force = False
+    if not force and "summary" in inspect(engine).get_table_names():
         print("'summary' table found, skipping ETL ⏩")
     else:
         extract()
