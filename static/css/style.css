@@ -72,3 +72,35 @@
 .select2-selection__clear {
     color: var(--font-color);
 }
+
+.image-box {
+    justify-content: center;
+    text-align: center;
+}
+
+.image-box > img {
+    height: 300px;
+    width: 300px;
+}
+
+.text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-row {
+    padding: 10px 0 10px 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .row-odd {
+        flex-direction: column-reverse;
+    }
+}
+
+a {
+    color: var(--font-color);
+    text-decoration: none;
+}
