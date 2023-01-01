@@ -2,8 +2,9 @@ const lightModeButton = d3.select("#light-mode")
 const darkModeButton = d3.select("#dark-mode")
 const root = document.querySelector(":root")
 const html = d3.select("html")
+const images = d3.selectAll("img")
 
-const screenMode = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+const theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
 const plots = d3.selectAll(".plot")
 
 lightModeButton.on("click.tr", transitionToLightMode);
@@ -45,6 +46,10 @@ function transitionToLightMode() {
     Object.entries(lightModeColors).map(([key, value]) => root.style.setProperty(key, value))
     backgroundColor = lightModeColors["--background-color"];
     fontColor = lightModeColors["--font-color"];
+    images.select(function () {
+        const img = d3.select(this)
+        img.property("src", img.property("src").replace("dark", "light"))
+    })
     localStorage.setItem("theme", "light")
 }
 
@@ -55,6 +60,10 @@ function transitionToDarkMode() {
     Object.entries(darkModeColors).map(([key, value]) => root.style.setProperty(key, value))
     backgroundColor = darkModeColors["--background-color"];
     fontColor = darkModeColors["--font-color"];
+    images.select(function () {
+        const img = d3.select(this)
+        img.property("src", img.property("src").replace("light", "dark"))
+    })
     localStorage.setItem("theme", "dark")
 }
 
@@ -71,7 +80,7 @@ function updatePlotly() {
 }
 
 (() => {
-    if (screenMode === "light") {
+    if (theme === "light") {
         transitionToLightMode();
     } else {
         transitionToDarkMode()
