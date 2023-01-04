@@ -56,7 +56,11 @@ Special thanks to [Lehak Narnauli](https://www.kaggle.com/lehaknarnauli) for
 the [Spotify Datasets](https://www.kaggle.com/datasets/lehaknarnauli/spotify-datasets)
 and [Story Set](https://storyset.com/) for the images.
 
-## Deploying to Github Pages
+## Deploying to Github Pages using [Flask Frozen](https://pythonhosted.org/Frozen-Flask/)
+
+--------------------------
+Please refer to Flask Frozen documentation for proper freezing of your Flask app. Please make sure to update `config.py`
+to reflect the Site Home Page
 
 ```shell
 $ git checkout -b gh-pages
